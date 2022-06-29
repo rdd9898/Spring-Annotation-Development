@@ -82,5 +82,16 @@ public class IOCTest {
         System.out.println(persons);
     }
 
+    @Test
+    public void testImport() {
+        printBeans(applicationContext);
+    }
+
+    private void printBeans(AnnotationConfigApplicationContext applicationContext) {
+        String[] definitionNames = applicationContext.getBeanDefinitionNames();
+        for (String name : definitionNames) {
+            System.out.println(name);
+        }
+    }
 
 }
